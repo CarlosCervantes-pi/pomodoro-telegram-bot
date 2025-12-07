@@ -1,6 +1,6 @@
 # Diagramas C4 – Bot de Telegram Pomodoro
 
-A continuación se muestran los diagramas C1 y C2 del sistema, utilizando Mermaid para permitir su visualización directamente en GitHub.
+Los siguientes diagramas representan el modelo C4 del sistema, usando Mermaid para que puedan visualizarse directamente en GitHub.
 
 ---
 
@@ -8,8 +8,6 @@ A continuación se muestran los diagramas C1 y C2 del sistema, utilizando Mermai
 
 ```mermaid
 flowchart TB
-
-%% ========================== %% C1 – DIAGRAMA DE CONTEXTO %% ==========================
 
 subgraph C1[ C1 – Contexto del Sistema ]
     U[Usuario de Telegram]
@@ -29,14 +27,12 @@ end
 ```mermaid
 flowchart TB
 
-%% ========================== %% C2 – DIAGRAMA DE CONTENEDORES %% ==========================
-
 subgraph C2[ C2 – Contenedores del Bot Pomodoro ]
-    subgraph Backend[Backend del Bot – Node.js]
+    subgraph Backend[Backend – Node.js]
         ENTRY[bot.js<br>Punto de entrada]
-        CONFIG[config/<br>Configuración general]
-        HANDLERS[handlers/<br>Manejadores de comandos]
-        UTILS[utils/<br>Funciones auxiliares]
+        CONFIG[config/ – Configuración]
+        HANDLERS[handlers/ – Manejadores de comandos]
+        UTILS[utils/ – Funciones auxiliares]
     end
 
     TG[Telegram API]
@@ -48,4 +44,3 @@ ENTRY --> CONFIG
 ENTRY --> HANDLERS
 ENTRY --> UTILS
 ```
-
